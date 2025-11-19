@@ -1,87 +1,72 @@
-/* Estilo general */
+/* Fondo general  */
 body {
-    font-family: Arial, sans-serif;
-    background: #f4f3ff;
-    margin: 0;
-    padding: 20px;
+    background: #f7f6ff;
 }
 
-/* Título principal */
+/* Título */
 .titulo {
-    text-align: center;
-    margin-bottom: 20px;
+    font-weight: bold;
+    color: #5a3ec8;
 }
 
 /* Formulario */
-.formulario {
+.form-card {
+    border-radius: 20px;
     background: white;
-    padding: 20px;
-    width: 100%;
-    max-width: 500px;
-    margin: 0 auto 30px auto;
-    border-radius: 15px;
-    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    border: 1px solid #ece9ff;
 }
 
-.formulario input,
-.formulario textarea {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 10px;
-    border-radius: 8px;
-    border: 1px solid #ccc;
-}
-
-.btn-publicar {
-    width: 100%;
-    padding: 12px;
-    background: #6a5acd;
-    color: white;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-}
-
-.btn-publicar:hover {
-    background: #5848c2;
-}
-
-/* Feed */
+/* FEED INSTAGRAM */
 .feed {
-    max-width: 600px;
-    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 }
 
-/* Card */
-.card {
+/* CARD ESTILO INSTAGRAM */
+.card-post {
     background: white;
     border-radius: 15px;
-    margin-bottom: 20px;
-    padding: 10px;
+    overflow: hidden;
     box-shadow: 0 3px 10px rgba(0,0,0,0.1);
 }
 
-.card img {
+/* Imagen arriba */
+.card-post img {
     width: 100%;
-    border-radius: 10px;
+    height: auto;
 }
 
-.card h3 {
-    margin: 10px 0 5px;
+/* Contenido */
+.card-body h5 {
+    font-weight: 600;
+    margin-bottom: 5px;
 }
 
-.card p {
+.card-body p {
     margin-bottom: 10px;
 }
 
-/* Likes */
+/* Like */
 .like-btn {
+    font-size: 28px;
     cursor: pointer;
-    font-size: 20px;
-    color: gray;
+    transition: transform 0.2s ease;
     user-select: none;
 }
 
-.like-btn.liked {
-    color: red;
+.like-btn:hover {
+    transform: scale(1.2);
+}
+
+/* Corazón cuando está activo */
+.liked {
+    color: #ff2d55 !important;
+}
+
+/* Animación de "pop" al dar like */
+@keyframes pop {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.6); }
+    100% { transform: scale(1); }
 }

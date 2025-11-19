@@ -1,47 +1,53 @@
-// 1. Referencias a los elementos del HTML
+// Capturar elementos del DOM
 const form = document.getElementById("postForm");
 const feed = document.getElementById("feed");
 
-// 2. Escuchar cuando el formulario se envía
-form.addEventListener("submit", function(event) {
-    event.preventDefault(); // Evita que la página recargue
+// Evento submit
+form.addEventListener("submit", function(e) {
+    e.preventDefault();
 
-    // 3. Tomar los valores del formulario
     const titulo = document.getElementById("titulo").value;
     const descripcion = document.getElementById("descripcion").value;
-    const imagenArchivo = document.getElementById("imagen").files[0];
+    const imagenFile = document.getElementById("imagen").files[0];
 
-    // 4. Crear URL para previsualizar la imagen
-    const imagenURL = URL.createObjectURL(imagenArchivo);
+    const imgURL = URL.createObjectURL(imagenFile);
 
-    // 5. Crear la card dinámicamente
+    // Crear CARD ESTILO INSTAGRAM
     const card = document.createElement("div");
-    card.classList.add("card");
+    card.classList.add("card-post");
 
     card.innerHTML = `
-        <img src="${imagenURL}">
-        <h3>${titulo}</h3>
-        <p>${descripcion}</p>
+        <img src="${imgURL}" alt="imagen">
 
-        <span class="like-btn">❤️</span>
-        <span class="contador">0 Me gusta</span>
+        <div class="p-3 card-body">
+            <h5>${titulo}</h5>
+            <p>${descripcion}</p>
+
+            <div class="d-flex align-items-center gap-2">
+                <i class="bi bi-heart like-btn"></i>
+                <span class="likes-count">0 Me gusta</span>
+            </div>
+        </div>
     `;
 
-    // 6. Agregar funcionalidad al botón de like
+    // LIKE BUTTON FUNCIONAL
     const likeBtn = card.querySelector(".like-btn");
-    const contador = card.querySelector(".contador");
+    const likesCount = card.querySelector(".likes-count");
 
     let likes = 0;
 
-    likeBtn.addEventListener("click", function() {
+    likeBtn.addEventListener("click", function () {
         likes++;
-        contador.textContent = `${likes} Me gusta`;
-        likeBtn.classList.add("liked"); // Cambia color a rojo
+        likesCount.textContent = `${likes} Me gusta`;
+
+        likeBtn.classList.add("liked");
+        likeBtn.style.animation = "pop 0.3s ease";
+        setTimeout(() => likeBtn.style.animation = "", 300);
     });
 
-    // 7. Agregar la card al feed
-    feed.prepend(card); // prepend lo coloca primero
+    // Agregar al feed (arriba como Instagram)
+    feed.prepend(card);
 
-    // 8. Limpiar formulario
+    // Limpiar formulario
     form.reset();
 });
