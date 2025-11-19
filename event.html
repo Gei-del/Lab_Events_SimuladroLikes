@@ -1,0 +1,31 @@
+<!-- Vamos a trabajar u evento card -->
+ 
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LAB EVENTOS </title>
+    <link rel="stylesheet" href="event.css">
+</head>
+<body>
+
+    <h1 class="titulo">LAB EVENTOS</h1>
+
+    <!-- FORMULARIO PARA CREAR PUBLICACIONES -->
+    <form id="postForm" class="formulario">
+        <input type="text" id="titulo" placeholder="Título de la publicación" required>
+
+        <textarea id="descripcion" placeholder="Descripción..." required></textarea>
+
+        <input type="file" id="imagen" accept="image/*" required>
+
+        <button type="submit" class="btn-publicar">Publicar</button>
+    </form>
+
+    <!-- CONTENEDOR DONDE APARECERÁN LAS PUBLICACIONES -->
+    <section id="feed" class="feed"></section>
+
+    <script src="event.js"></script>
+</body>
+</html>

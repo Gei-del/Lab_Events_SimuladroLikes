@@ -1,0 +1,87 @@
+/* Estilo general */
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f3ff;
+    margin: 0;
+    padding: 20px;
+}
+
+/* Título principal */
+.titulo {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Formulario */
+.formulario {
+    background: white;
+    padding: 20px;
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto 30px auto;
+    border-radius: 15px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}
+
+.formulario input,
+.formulario textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+}
+
+.btn-publicar {
+    width: 100%;
+    padding: 12px;
+    background: #6a5acd;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.btn-publicar:hover {
+    background: #5848c2;
+}
+
+/* Feed */
+.feed {
+    max-width: 600px;
+    margin: auto;
+}
+
+/* Card */
+.card {
+    background: white;
+    border-radius: 15px;
+    margin-bottom: 20px;
+    padding: 10px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}
+
+.card img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.card h3 {
+    margin: 10px 0 5px;
+}
+
+.card p {
+    margin-bottom: 10px;
+}
+
+/* Likes */
+.like-btn {
+    cursor: pointer;
+    font-size: 20px;
+    color: gray;
+    user-select: none;
+}
+
+.like-btn.liked {
+    color: red;
+}
