@@ -45,9 +45,20 @@ form.addEventListener("submit", function(e) {
         setTimeout(() => likeBtn.style.animation = "", 300);
     });
 
+
+
     // Agregar al feed (arriba como Instagram)
     feed.prepend(card);
 
     // Limpiar formulario
     form.reset();
 });
+
+function likePost() {
+  alert("¡Te ha gustado esta publicación!");
+}
+// comentario
+function commentPost() {
+  const commentBox = document.getElementById("commentBox");
+  commentBox.style.display = commentBox.style.display === "none" ? "block" : "none";
+}
